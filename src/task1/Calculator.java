@@ -40,4 +40,8 @@ public class Calculator {
         }
         return sign * getSign(k / 2) * calculateSin(x);
     }
+
+    public double getCos(double x) {
+        return getSin(x + Math.PI / 2);
+    }
 }
