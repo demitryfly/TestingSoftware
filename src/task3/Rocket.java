@@ -19,20 +19,16 @@ public class Rocket extends Visible {
         return "massive rocket";
     }
 
-    public void enlarge() {
-
-    }
-
     @Override
     public void shock(Person person) {
         person.doShock(this.surprise);
     }
 
     @Override
-    public Performance see(boolean deep) {
+    public void see(boolean deep) {
         if (deep)
-            return Performance.ROCKET;
+            return;// Performance.ROCKET;
 
-        return Performance.SILVER_ARROW;
+        //return Performance.SILVER_ARROW;
     }
 }

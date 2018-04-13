@@ -10,4 +10,5 @@ public class Surprise {
     public double getSurprise() {
         return surprise;
     }
+
 }

@@ -5,5 +5,9 @@ public abstract class Visible {
 
     public void shock(Person person){}
 
-    public abstract void see(boolean deep);
+    public void see(boolean deep){}
+
+    public Visible enlarge() {
+        return this;
+    }
 }

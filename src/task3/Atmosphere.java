@@ -18,4 +18,10 @@ public class Atmosphere extends Visible {
     public void see(boolean deep) {
 
     }
+
+    @Override
+    public Atmosphere enlarge() {
+
+        return null;
+    }
 }

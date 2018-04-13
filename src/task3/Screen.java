@@ -22,8 +22,9 @@ public class Screen extends Visible {
         return rockets;
     }
 
-    public void enlarge() {
-
+    public Rocket enlarge() {
+        //this.visable =
+        return null;
     }
 
     @Override
