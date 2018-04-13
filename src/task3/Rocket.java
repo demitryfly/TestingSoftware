@@ -1,9 +1,14 @@
 package task3;
 
-public class Rocket extends Focus {
+public class Rocket extends Visible {
+    private Surprise surprise;
 
-    public enum FordState {
-        START, AT_CONTROLLERS, GUESSED, HOLDING, RELEASED_HALF;
+    {
+        surprise = new Surprise(10.);
+    }
+
+    public enum Performance {
+        SILVER_ARROW, ROCKET;
     }
 
     public String getType() {
@@ -14,4 +19,20 @@ public class Rocket extends Focus {
         return "massive rocket";
     }
 
+    public void enlarge() {
+
+    }
+
+    @Override
+    public void shock(Person person) {
+        person.doShock(this.surprise);
+    }
+
+    @Override
+    public Performance see(boolean deep) {
+        if (deep)
+            return Performance.ROCKET;
+
+        return Performance.SILVER_ARROW;
+    }
 }

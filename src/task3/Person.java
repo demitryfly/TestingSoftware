@@ -1,13 +1,18 @@
 package task3;
 
-public class Person extends Focus {
+public class Person extends Visible {
     private String name;
-    private Focus focus;
     private Shoulder shoulder;
     private Double attention;
+    private Visible focus;
 
     {
         attention = 0.;
+    }
+
+    @Override
+    public void see(boolean deep) {
+
     }
 
     public class Shoulder {
@@ -16,11 +21,11 @@ public class Person extends Focus {
         }
     };
 
-    public Focus getFocus() {
+    public Visible getFocus() {
         return focus;
     }
 
-    public boolean tryShow(Focus focus) {
+    public boolean tryShow(Visible focus) {
         if (attention < 1.)
             return false;
 
@@ -36,8 +41,8 @@ public class Person extends Focus {
         this.shoulder = shoulder;
     }
 
-    public void shock() {
-        return;
+    public void doShock(Surprise surprise) {
+        this.attention -= surprise.getSurprise();
     }
 
 
