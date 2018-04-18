@@ -5,16 +5,20 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
-public class CalculatorTests {
 
+public class CalculatorTests {
     private final double eps = 10e-6;
+    private Table table = new Table();
 
     @Test
     public void integers() {
         Calculator calc = new Calculator();
         for (int i = -1000; i < 1000; ++i) {
             double u = (double) i;
-            assertTrue(Math.abs(Math.cos(u) - calc.getCos(u)) < eps, "u = " + u);
+            System.out.println(i + ": " + table.getValue(i));
+            System.out.println(i + ": " + Math.cos(u));
+            System.out.println(i + ": " + calc.getCos(u));
+            assertTrue(Math.abs(table.getValue(i) - calc.getCos(u)) < eps, "u = " + u);
         }
     }
 
@@ -23,17 +27,7 @@ public class CalculatorTests {
         Calculator calc = new Calculator();
         for (int i = -1000; i < 1000; ++i) {
             double u = (double) i*(Math.PI/2);
-            assertTrue(Math.abs(Math.cos(u) - calc.getCos(u)) < eps, "u = " + u);
-        }
-    }
-
-    @Test
-    public void random() {
-        Calculator calc = new Calculator();
-        Random rnd = new Random();
-        for (int i = -1000; i < 1000; ++i) {
-            double u = (double) i*rnd.nextDouble();
-            assertTrue(Math.abs(Math.cos(u) - calc.getCos(u)) < eps, "u = " + u);
+            //assertTrue(Math.abs(table.getValue(u) - calc.getCos(u)) < eps, "u = " + u);
         }
     }
 }

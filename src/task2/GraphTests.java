@@ -1,10 +1,7 @@
 package task2;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.Test;
-
-import java.util.HashSet;
 import java.util.Vector;
 
 public class GraphTests {
