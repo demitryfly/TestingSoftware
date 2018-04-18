@@ -2,6 +2,7 @@ package task2;
 
 import java.util.*;
 import java.util.concurrent.*;
+import javafx.util.*;
 
 public class Graph {
     private final int vertexMaxCount, edgesMaxCount;
@@ -35,25 +36,30 @@ public class Graph {
     }
 
     public Vector<Integer> bfs(Integer v) {
-        Vector<Integer> res = new Vector<>();
-        for (int i = 0; i < marked.size(); ++i)
+        if (0 == edgesCount)
+            return null;
+        Vector<Integer> numberV = new Vector<>();
+        for (int i = 0; i < marked.size(); ++i) {
+            numberV.add(-1);
             marked.set(i, false);
-
-        ArrayBlockingQueue<Integer> queue = new ArrayBlockingQueue<>(edgesCount);
-        queue.add(v);
-
-        while(!queue.isEmpty()) {
-            Integer crnt = queue.remove();
-
-            if (marked.get(crnt))
-                continue;
-            marked.set(crnt, true);
-
-            for (int i = 0; i < neighbors.get(crnt).size(); ++i)
-                queue.add(neighbors.get(crnt).get(i));
-
-            res.add(crnt);
         }
-        return res;
+        ArrayBlockingQueue<Pair<Integer, Integer>> queue = new ArrayBlockingQueue<>(edgesCount);
+        queue.add(new Pair(v, 0));
+
+        while (!queue.isEmpty()) {
+            Pair<Integer, Integer> p_crnt = queue.remove();
+            Integer key = p_crnt.getKey();
+            Integer value = p_crnt.getValue();
+
+            if (marked.get(key))
+                continue;
+
+            marked.set(key, true);
+            numberV.set(key, value);
+
+            for (int i = 0; i < neighbors.get(key).size(); ++i)
+                queue.add(new Pair(neighbors.get(key).get(i), value + 1));
+        }
+        return numberV;
     }
 }
