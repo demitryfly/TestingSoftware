@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.util.Vector;
 
 public class GraphTests {
-    Vector<Integer> order = new Vector<>();
 
     private void test(Vector<Integer> order, Vector<Integer> result) {
         assertTrue(order.size() <= result.size());
@@ -17,10 +16,7 @@ public class GraphTests {
 
     @Test
     public void bfs() {
-        int n = 10, m = 20;
-
-        order.clear();
-
+        Vector<Integer> order = new Vector<>();
         order.add(0);
         order.add(1);
         order.add(1);
@@ -31,7 +27,7 @@ public class GraphTests {
         order.add(3);
         order.add(3);
 
-        Graph graph = new Graph(n, m);
+        Graph graph = new Graph();
         graph.tryAddEdge(0, 1);
         graph.tryAddEdge(0, 2);
         graph.tryAddEdge(0, 3);
@@ -51,15 +47,13 @@ public class GraphTests {
 
     @Test
     public void bfs1() {
-        int n = 10, m = 20;
-
-        order.clear();
+        Vector<Integer> order = new Vector<>();
         order.add(0);
         order.add(1);
         order.add(1);
         order.add(1);
 
-        Graph graph = new Graph(n, m);
+        Graph graph = new Graph();
         graph.tryAddEdge(0, 1);
         graph.tryAddEdge(0, 2);
         graph.tryAddEdge(0, 3);
@@ -70,14 +64,47 @@ public class GraphTests {
 
     @Test
     public void bfs2() {
-        int n = 10, m = 20;
+        Vector<Integer> order = new Vector<>();
+        order.add(0);
+        order.add(1);
+        order.add(2);
+        order.add(3);
+        order.add(4);
 
-        order.clear();
+        Graph graph = new Graph();
+        graph.tryAddEdge(0, 1);
+        graph.tryAddEdge(1, 2);
+        graph.tryAddEdge(2, 3);
+        graph.tryAddEdge(3, 4);
 
-        Graph graph = new Graph(n, m);
+        Vector<Integer> result = graph.bfs(0);
+        test(order, result);
+    }
+
+    @Test
+    public void bfs3() {
+        Vector<Integer> order = new Vector<>();
+        order.add(0);
+        order.add(1);
+        order.add(1);
+        order.add(1);
+        order.add(2);
+
+        Graph graph = new Graph();
+        graph.tryAddEdge(0, 1);
+        graph.tryAddEdge(0, 2);
+        graph.tryAddEdge(0, 3);
+        graph.tryAddEdge(1, 4);
+
+        Vector<Integer> result = graph.bfs(0);
+        test(order, result);
+    }
+
+    @Test
+    public void bfs4() {
+        Graph graph = new Graph();
 
         Vector<Integer> result = graph.bfs(0);
         assertTrue(null == result);
-
     }
 }
