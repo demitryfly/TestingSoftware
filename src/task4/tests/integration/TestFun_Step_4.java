@@ -11,10 +11,10 @@ import task4.tests.Tests;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class TestFun_Step_3 extends Tests {
+public class TestFun_Step_4 extends Tests {
     {
-        this.funTrg = new FunTrg(new Tan(Table.sin, new Cos(Table.sin)), new Sec(new Cos(Table.sin)), new Csc(Table.sin));
-        this.funLog = new FunLog(Table.log, new Log2(Table.log));
+        this.funTrg = new FunTrg(new Tan(new Sin(), new Cos(new Sin())), new Sec(new Cos(new Sin())), new Csc(new Sin()));
+        this.funLog = new FunLog(new Log(), new Log2(new Log()));
 
         this.fun = new Function(funLog, funTrg);
     }

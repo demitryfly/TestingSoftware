@@ -79,6 +79,20 @@ public class Table {
         sin.addPair(-5.4, 0.772764);
         sin.addPair(-5.9, 0.3738766);
 
+        // for integration test:
+        sin.addPair(1.170796, 0.921060994);
+        sin.addPair(0.570796, 0.540302306);
+        sin.addPair(0.140796, 0.140331606);
+        sin.addPair(-0.129204, -0.128844494);
+        sin.addPair(-0.489204, -0.469923114);
+        sin.addPair(-0.969204, -0.824435289);
+        sin.addPair(-1.849204, -0.961494358);
+        sin.addPair(-2.299204, -0.746235549);
+        sin.addPair(-2.999204, -0.141908321);
+        sin.addPair(-3.329204, 0.186512369);
+        sin.addPair(-3.829204, 0.634692876);
+        sin.addPair(-4.329204, 0.927478431);
+
         cos.addPair(-0.4, 0.9210609);
         cos.addPair(-1.0, 0.5403023);
         cos.addPair(-1.43, 0.1403316058);

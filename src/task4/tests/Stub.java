@@ -22,6 +22,7 @@ public class Stub implements ICalculator {
 
     @Override
     public double calc(double x) {
+        x = Math.round(1.e6 * x) / 1.e6;
         if (!table.containsKey(x))
             System.out.println("x  = " + x);
 
