@@ -11,23 +11,16 @@ public class CalculatorTests {
     private Table table = new Table();
 
     @Test
-    public void integers() {
+    public void standard() {
         Calculator calc = new Calculator();
-        for (int i = -1000; i < 1000; ++i) {
-            double u = (double) i;
-            System.out.println(i + ": " + table.getValue(i));
+        for (int i = 0; i < table.getSize(); ++i) {
+            double u = table.getKey(i);
+
+            System.out.println(i + ": " + u);
             System.out.println(i + ": " + Math.cos(u));
             System.out.println(i + ": " + calc.getCos(u));
-            assertTrue(Math.abs(table.getValue(i) - calc.getCos(u)) < eps, "u = " + u);
-        }
-    }
 
-    @Test
-    public void extremes() {
-        Calculator calc = new Calculator();
-        for (int i = -1000; i < 1000; ++i) {
-            double u = (double) i*(Math.PI/2);
-            //assertTrue(Math.abs(table.getValue(u) - calc.getCos(u)) < eps, "u = " + u);
+            assertTrue(Math.abs(table.getValue(u) - calc.getCos(u)) < eps, "u = " + u);
         }
     }
 }

@@ -7,7 +7,7 @@ public class Calculator {
     }
 
     private double calculateSin(double x) {
-        assert 0 <= x && x < Math.PI / 2;
+        assert 0 <= x && x <= Math.PI / 2;
 
         double sum = 0;
 
