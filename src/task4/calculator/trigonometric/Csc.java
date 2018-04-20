@@ -3,7 +3,11 @@ package task4.calculator.trigonometric;
 import task4.calculator.ICalculator;
 
 public class Csc implements ICalculator {
-    private Sin customSin;
+    private ICalculator customSin;
+
+    public Csc(ICalculator customSin) {
+        this.customSin = customSin;
+    }
 
     @Override
     public double calc(double x) {

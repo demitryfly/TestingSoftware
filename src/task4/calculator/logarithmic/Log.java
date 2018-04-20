@@ -10,7 +10,7 @@ public class Log extends Sign implements ICalculator {
         assert Math.abs(x) < 1;
 
         double sum = 0.;
-        int n = 15;
+        int n = 239;
         for (int i = 1; i < n; ++i)
             sum += getSign(i + 1) / i * Math.pow(x, i);
 
@@ -22,7 +22,7 @@ public class Log extends Sign implements ICalculator {
         assert Math.abs(x) > 1;
 
         double sum = 0.;
-        int n = 111;
+        int n = 239;
         for (int i = 1; i < n; ++i)
             sum += 1 / (i * Math.pow(x, i));
 

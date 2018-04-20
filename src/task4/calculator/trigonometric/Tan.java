@@ -5,8 +5,13 @@ import task4.calculator.trigonometric.Cos;
 import task4.calculator.trigonometric.Sin;
 
 public class Tan implements ICalculator {
-    private Sin customSin;
-    private Cos customCos;
+    private ICalculator customSin;
+    private ICalculator customCos;
+
+    public Tan(ICalculator customSin, ICalculator customCos) {
+        this.customSin = customSin;
+        this.customCos = customCos;
+    }
 
     @Override
     public double calc(double x) {
