@@ -10,7 +10,7 @@ public class Main {
 
 
 
-        SeleniumUtils utils = new SeleniumUtils();
+        //SeleniumUtils utils = new SeleniumUtils();
 
 
 
