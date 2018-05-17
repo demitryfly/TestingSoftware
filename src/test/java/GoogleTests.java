@@ -73,4 +73,37 @@ public class GoogleTests {
             assertTrue(0 == s.compareTo(messageName));
         }
     }
+
+    @Test
+    public void tryCreateFile() throws InterruptedException {
+
+        for (WebDriver driver : driverVector) {
+
+            driver.get("https://drive.google.com/drive/my-drive");
+            //sign in
+            Thread.sleep(10000);
+
+            driver.findElement(By.id("identifierId")).sendKeys("TestITMO123@gmail.com");
+            driver.findElement(By.id("identifierNext")).click();
+
+            Thread.sleep(10000);
+
+            driver.findElement(By.name("password")).sendKeys("sPiMz(//ai%3CFf4&j8U");
+            driver.findElement(By.id("passwordNext")).click();
+
+
+            Thread.sleep(10000);
+
+
+            driver.get("https://docs.google.com/document/u/0/");
+            Thread.sleep(5000);
+            driver.findElement(By.xpath("//div[@id=':1d']/div")).click();
+            Thread.sleep(5000);
+            driver.findElement(By.xpath("//span[@id='docs-titlebar-share-client-button']/div")).click();
+            Thread.sleep(5000);
+            driver.findElement(By.name("ok")).click();
+            Thread.sleep(5000);
+
+        }
+    }
 }
